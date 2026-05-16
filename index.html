@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>utraberg — malarstwo olejne</title>
+<meta name="description" content="Utraberg — oryginalne obrazy olejne na płótnie. Galeria, katalog prac i kontakt z artystką.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav-links">
+    <a href="#" class="nav-link" data-section="galeria" onclick="showSection('galeria', this)">
+      <span data-pl="GALERIA" data-en="GALLERY">GALERIA</span>
+    </a>
+    <a href="#" class="nav-link" data-section="katalog" onclick="showSection('katalog', this)">
+      <span data-pl="KATALOG" data-en="CATALOGUE">KATALOG</span>
+    </a>
+    <a href="#" class="nav-link" data-section="kontakt" onclick="showSection('kontakt', this)">
+      <span data-pl="KONTAKT" data-en="CONTACT">KONTAKT</span>
+    </a>
+    <a href="#" class="nav-link" data-section="artysta" onclick="showSection('artysta', this)">
+      <span data-pl="O ARTYŚCIE" data-en="ARTIST">O ARTYŚCIE</span>
+    </a>
+  </nav>
+
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('pl', this)">PL</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+    </div>
+    <a href="#" onclick="showSection('galeria', document.querySelector('.nav-link'))" class="logo-link">
+      <img src="logo.png" alt="utraberg" class="logo-img">
+    </a>
+  </div>
+</header>
+
+<!-- GALERIA -->
+<section id="galeria" class="section active">
+  <div class="gallery-intro" data-pl="W wirtualnej galerii znajdziesz przekrój obrazów artystki. Wszystkie obrazy wykonano techniką farby olejnej na płótnie.<br>Kliknij w obraz, który cię zainteresował, sprawdź wymiary i zobacz wizualizację w przykładowym wnętrzu." data-en="In the virtual gallery you'll find a selection of the artist's works. All paintings are oil on canvas.<br>Click on a painting to see its dimensions and a visualisation in an interior setting.">
+    W wirtualnej galerii znajdziesz przekrój obrazów artystki. Wszystkie obrazy wykonano techniką farby olejnej na płótnie.<br>
+    Kliknij w obraz, który cię zainteresował, sprawdź wymiary i zobacz wizualizację w przykładowym wnętrzu.
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Obrazy generowane przez JS z danych poniżej -->
+  </div>
+</section>
+
+<!-- KATALOG -->
+<section id="katalog" class="section">
+  <div class="katalog-layout">
+    <div class="katalog-text">
+      <h2 class="katalog-heading" data-pl="KATALOG + WIZUALIZACJA" data-en="CATALOGUE + VISUALISATION">KATALOG + WIZUALIZACJA</h2>
+      <p class="katalog-desc" data-pl="Kliknij, aby pobrać katalog prac artystki wraz z wizualizacjami w przykładowych wnętrzach." data-en="Click to download the artist's catalogue with interior visualisations.">
+        Kliknij, aby pobrać katalog prac artystki wraz z wizualizacjami w przykładowych wnętrzach.
+      </p>
+      <a href="files/katalog-maly.pdf" class="katalog-btn" download>
+        <span data-pl="POBIERZ KATALOG" data-en="DOWNLOAD CATALOGUE">POBIERZ KATALOG</span>
+      </a>
+    </div>
+    <div class="katalog-text">
+      <h2 class="katalog-heading" data-pl="KATALOG OBRAZÓW" data-en="PAINTINGS CATALOGUE">KATALOG OBRAZÓW</h2>
+      <p class="katalog-desc" data-pl="Kliknij, aby pobrać katalog dużych formatów." data-en="Click to download the large-format paintings catalogue.">
+        Kliknij, aby pobrać katalog dużych formatów.
+      </p>
+      <a href="files/katalog-duze.pdf" class="katalog-btn katalog-btn--alt" download>
+        <span data-pl="POBIERZ KATALOG DUŻYCH FORMATÓW" data-en="DOWNLOAD LARGE FORMAT CATALOGUE">POBIERZ KATALOG DUŻYCH FORMATÓW</span>
+      </a>
+    </div>
+  </div>
+  <p class="katalog-note" data-pl="Po kliknięciu w powyższe linki rozpocznie się pobieranie katalogu, który jest przekrojem prac artystki. Każdy z przedstawionych obrazów to odrębne dzieło, ale jednocześnie zarys stylu, w którym powstawały serie obrazów. Dlatego jeśli podoba Ci się to, co widzisz, możesz śmiało spytać o dostępność prac w podobnym klimacie. Wolisz przeglądać obrazy na stronie? Wróć do zakładki GALERIA." data-en="Clicking the links above will start downloading the catalogue — a selection of the artist's work. Each painting is a unique piece, but also a glimpse of the style and series it belongs to. If you like what you see, feel free to ask about availability of works in a similar style. Prefer to browse online? Return to the GALLERY tab.">
+    Po kliknięciu w powyższe linki rozpocznie się pobieranie katalogu, który jest przekrojem prac artystki. Każdy z przedstawionych obrazów to odrębne dzieło, ale jednocześnie zarys stylu, w którym powstawały serie obrazów. Dlatego jeśli podoba Ci się to, co widzisz, możesz śmiało spytać o dostępność prac w podobnym klimacie. Wolisz przeglądać obrazy na stronie? Wróć do zakładki GALERIA.
+  </p>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="section">
+  <div class="kontakt-bg">
+    <div class="kontakt-card">
+      <div class="kontakt-col">
+        <div class="kontakt-label">CALL</div>
+        <a href="tel:666329100" class="kontakt-value">666-329-100</a>
+      </div>
+      <div class="kontakt-divider"></div>
+      <div class="kontakt-col">
+        <div class="kontakt-label">EMAIL</div>
+        <a href="mailto:lokalnasztuka@gmail.com" class="kontakt-value">lokalnasztuka@gmail.com</a>
+      </div>
+      <div class="kontakt-divider"></div>
+      <div class="kontakt-col">
+        <div class="kontakt-label">FOLLOW</div>
+        <div class="kontakt-social">
+          <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kontakt-form-section">
+    <h3 class="kontakt-form-title" data-pl="Napisz wiadomość" data-en="Send a message">Napisz wiadomość</h3>
+    <form class="kontakt-form" onsubmit="handleForm(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Imię / Name" class="form-input" required>
+        <input type="email" placeholder="Email" class="form-input" required>
+      </div>
+      <textarea class="form-textarea" placeholder="Treść wiadomości / Message" rows="5" required></textarea>
+      <button type="submit" class="form-submit">
+        <span data-pl="WYŚLIJ" data-en="SEND">WYŚLIJ</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- O ARTYŚCIE -->
+<section id="artysta" class="section">
+  <div class="artysta-layout">
+    <div class="artysta-photo-placeholder">
+      <img src="images/artysta.jpg" alt="Artystka" class="artysta-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="artysta-photo-fallback">zdjęcie artystki</div>
+    </div>
+    <div class="artysta-text">
+      <h2 class="artysta-name">UTRABERG</h2>
+      <p class="artysta-bio" data-pl="Treść biogramu artystki — do uzupełnienia." data-en="Artist biography — to be added.">
+        Treść biogramu artystki — do uzupełnienia.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1, event)">&#8592;</button>
+  <button class="lightbox-next" onclick="lightboxNav(1, event)">&#8594;</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-visualization" id="lightboxViz">
+        <img id="lightboxVizImg" src="" alt="Wizualizacja w wnętrzu">
+      </div>
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-dims" id="lightboxDims"></div>
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <div class="lightbox-desc" id="lightboxDesc"></div>
+      <a id="lightboxShopLink" href="#" target="_blank" class="lightbox-shop-link" style="display:none">
+        <span data-pl="Zobacz w sklepie" data-en="View in shop">Zobacz w sklepie</span> →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-seo" aria-hidden="true">
+    SZTUKA WSPÓŁCZESNA | OBRAZ OLEJNY | OLEJ NA PŁÓTNIE | OBRAZY FIGURATYWNE | MALARSTWO | ARTYSTA | MALARZ | OBRAZ DO SALONU | WNĘTRZA | PROJEKTOWANIE WNĘTRZ | LOKALNA SZTUKA | LOKALNI ARTYŚCI | OBRAZ W RAMIE | OBRAZ NA ŚCIANĘ | OBRAZY NOWOCZESNE | INTERIOR DESIGN | POSŁA SZTUKA | ABSTRAKCJA | PEJZAŻ | PORTRET | MARTWA NATURA | POSTMODERNIZM | AKT | ART | DEKORACJE | DUŻE FORMATY | DUŻY OBRAZ | DUŻE OBRAZY OLEJNE | OIL ON CANVAS
+  </div>
+  <div class="footer-copy">© 2026 utraberg.art</div>
+</footer>
+
+<script src="gallery-data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

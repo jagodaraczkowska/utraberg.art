@@ -1,0 +1,18 @@
+const PAINTINGS = [
+  { id:1,  file:"images/p01.jpg", vizFile:"", titlePL:"Tytuł 1",  titleEN:"Title 1",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:2,  file:"images/p02.jpg", vizFile:"", titlePL:"Tytuł 2",  titleEN:"Title 2",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:3,  file:"images/p03.jpg", vizFile:"", titlePL:"Tytuł 3",  titleEN:"Title 3",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:4,  file:"images/p04.jpg", vizFile:"images/viz-sypialnia.jpg", titlePL:"Tytuł 4",  titleEN:"Title 4",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:5,  file:"images/p05.jpg", vizFile:"", titlePL:"Tytuł 5",  titleEN:"Title 5",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:6,  file:"images/p06.jpg", vizFile:"", titlePL:"Tytuł 6",  titleEN:"Title 6",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:7,  file:"images/p07.jpg", vizFile:"", titlePL:"Tytuł 7",  titleEN:"Title 7",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:8,  file:"images/p08.jpg", vizFile:"", titlePL:"Tytuł 8",  titleEN:"Title 8",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:9,  file:"images/p09.jpg", vizFile:"", titlePL:"Tytuł 9",  titleEN:"Title 9",  dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:10, file:"images/p10.jpg", vizFile:"", titlePL:"Tytuł 10", titleEN:"Title 10", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:11, file:"images/p11.jpg", vizFile:"", titlePL:"Tytuł 11", titleEN:"Title 11", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:12, file:"images/p12.jpg", vizFile:"", titlePL:"Tytuł 12", titleEN:"Title 12", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:13, file:"images/p13.jpg", vizFile:"", titlePL:"Tytuł 13", titleEN:"Title 13", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:14, file:"images/p14.jpg", vizFile:"", titlePL:"Tytuł 14", titleEN:"Title 14", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:15, file:"images/p15.jpg", vizFile:"", titlePL:"Tytuł 15", titleEN:"Title 15", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+  { id:16, file:"images/p16.jpg", vizFile:"", titlePL:"Tytuł 16", titleEN:"Title 16", dims:"? cm", tech:"olej na płótnie", descPL:"", descEN:"", shopUrl:"" },
+];
