@@ -1,6 +1,11 @@
+// =====================================================
+// UTRABERG — logika strony
+// =====================================================
+
 let currentLang = 'pl';
 let currentLightboxIndex = 0;
 
+// --- SEKCJE ---
 function showSection(id, el) {
   event && event.preventDefault();
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -9,6 +14,7 @@ function showSection(id, el) {
   if (el) el.classList.add('active');
 }
 
+// --- JĘZYK ---
 function setLang(lang, btn) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -23,13 +29,15 @@ function applyLang() {
   });
 }
 
+// --- GALERIA ---
 function buildGallery() {
   const grid = document.getElementById('galleryGrid');
   if (!grid || typeof PAINTINGS === 'undefined') return;
+
   grid.innerHTML = PAINTINGS.map((p, i) => `
     <div class="gallery-item" onclick="openLightbox(${i})">
       <div class="gallery-thumb">
-        <img src="${p.file}" alt="${p.titlePL}" loading="lazy">
+        <img src="${p.file}" alt="${p.titlePL}" loading="lazy" onerror="this.parentElement.classList.add('img-error')">
         <div class="gallery-overlay">
           <span class="gallery-overlay-text">${currentLang === 'pl' ? p.titlePL : p.titleEN}</span>
         </div>
@@ -42,20 +50,32 @@ function buildGallery() {
   `).join('');
 }
 
+// --- LIGHTBOX ---
 function openLightbox(index) {
   currentLightboxIndex = index;
   const p = PAINTINGS[index];
-  document.getElementById('lightboxImg').src = p.file;
+  document.getElementById('lightboxImg').src = '' + p.file;
   document.getElementById('lightboxTitle').textContent = '\u201e' + (currentLang === 'pl' ? p.titlePL : p.titleEN) + '\u201d';
   document.getElementById('lightboxDims').textContent = p.dims + ' | ' + p.tech;
   document.getElementById('lightboxDesc').textContent = currentLang === 'pl' ? p.descPL : p.descEN;
-  const vizDiv = document.getElementById('lightboxViz');
+
   const vizImg = document.getElementById('lightboxVizImg');
-  if (p.vizFile) { vizImg.src = p.vizFile; vizDiv.style.display = 'block'; }
-  else { vizDiv.style.display = 'none'; }
+  const vizDiv = document.getElementById('lightboxViz');
+  if (p.vizFile) {
+    vizImg.src = '' + p.vizFile;
+    vizDiv.style.display = 'block';
+  } else {
+    vizDiv.style.display = 'none';
+  }
+
   const shopLink = document.getElementById('lightboxShopLink');
-  if (p.shopUrl) { shopLink.href = p.shopUrl; shopLink.style.display = 'inline-block'; }
-  else { shopLink.style.display = 'none'; }
+  if (p.shopUrl) {
+    shopLink.href = p.shopUrl;
+    shopLink.style.display = 'inline-block';
+  } else {
+    shopLink.style.display = 'none';
+  }
+
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -72,6 +92,7 @@ function lightboxNav(dir, e) {
   openLightbox(currentLightboxIndex);
 }
 
+// Klawiatura
 document.addEventListener('keydown', e => {
   const lb = document.getElementById('lightbox');
   if (!lb.classList.contains('open')) return;
@@ -80,14 +101,19 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') lightboxNav(-1);
 });
 
+// --- FORMULARZ ---
 function handleForm(e) {
   e.preventDefault();
+  // Podmień na właściwy endpoint (np. Formspree, własny PHP)
   alert(currentLang === 'pl' ? 'Wiadomość wysłana!' : 'Message sent!');
   e.target.reset();
 }
 
+// --- INIT ---
 document.addEventListener('DOMContentLoaded', () => {
   buildGallery();
+  applyLang();
+  // Aktywuj pierwszą zakładkę
   const firstLink = document.querySelector('.nav-link');
   if (firstLink) firstLink.classList.add('active');
 });
